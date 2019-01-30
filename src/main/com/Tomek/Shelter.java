@@ -2,6 +2,7 @@ package com.Tomek;
 
 import java.io.*;
 import java.util.*;
+import java.util.stream.Collectors;
 
 
 public class Shelter implements Serializable {
@@ -50,7 +51,7 @@ emailSender  = new MessageSender(new EmailMessagePreparator());
     }
 
     protected void addAnimal(Animal animal) {
-        if (animalList.size() < SHELTER_CAPACITY) {
+        if (!isShelterFull()) {
             animalList.add(animal);
             currentAnimalsNumber++;
             if (SHELTER_CAPACITY - currentAnimalsNumber < 5) {
@@ -62,8 +63,8 @@ emailSender  = new MessageSender(new EmailMessagePreparator());
     }
 
     protected void removeAnimal(String name) {
-        animalList.removeIf(x -> x.getName().equals(name));
-        System.out.println(name + "found new home!");
+        animalList.removeIf(animal -> animal.getName().equals(name));
+        System.out.println(name + " znalazł dom");
     }
 
     protected void showStatus() {
@@ -85,7 +86,7 @@ emailSender  = new MessageSender(new EmailMessagePreparator());
     }
 
     private void printCapacityCommunicate() {
-        if (currentAnimalsNumber >= SHELTER_CAPACITY) {
+        if (isShelterFull()) {
             System.out.println("The shelter is full. Cant receive more animals.");
         }
         else if (currentAnimalsNumber / SHELTER_CAPACITY * 100 >= 75) {
@@ -95,6 +96,9 @@ emailSender  = new MessageSender(new EmailMessagePreparator());
         }
     }
 
+    private boolean isShelterFull() {
+        return (currentAnimalsNumber >= SHELTER_CAPACITY);
+    }
 
     private int getSHELTER_CAPACITY() {
         return SHELTER_CAPACITY;

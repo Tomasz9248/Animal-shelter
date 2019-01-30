@@ -1,6 +1,7 @@
 package com.Tomek;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Cat extends Animal {
 
@@ -47,5 +48,15 @@ public class Cat extends Animal {
         sb.append("Uses little tray: " + isUsingLittleTray + ", ");
         sb.append("Added: " + additionDate);
         return sb.toString();
+    }
+
+
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (isOutgoing? 1:0);
+        result = 31 * result + (isUsingLittleTray()? 1:0);
+        return result;
     }
 }

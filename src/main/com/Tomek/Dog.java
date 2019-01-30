@@ -40,6 +40,15 @@ public class Dog extends Animal {
         return super.compareTo(o);
     }
 
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (isFetching? 1:0);
+        result = 31 * result + (isPurebred? 1:0);
+        return result;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder(super.toString());

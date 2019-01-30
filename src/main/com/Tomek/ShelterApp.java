@@ -99,7 +99,7 @@ public class ShelterApp {
             System.out.println("Wybrałeś wartość spoza zakresu. Spróbuj ponownie");
             run();
         }
-
-
     }
+
 }
+

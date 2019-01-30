@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+import java.time.LocalDate;
 import java.util.Collections;
 import java.util.List;
 
@@ -24,6 +25,14 @@ public class ShelterTest {
         shelter.addAnimal(cat);
 
         assertTrue(shelter.getAnimalList().contains(cat));
+    }
+
+
+    @Test
+    public void shouldExecuteToStringFunction() {
+        cat.toString();
+
+        assertEquals("Name: Puszek, Race: dachowiec, Age: 4, Is outgoing: false, Uses little tray: true, Added: " + LocalDate.now(), cat.toString());
     }
 
 
