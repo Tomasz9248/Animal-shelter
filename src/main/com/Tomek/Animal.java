@@ -19,8 +19,11 @@ public class Animal implements Comparable<Animal>, Serializable {
     public Animal(String name, String race, int age) {
         this.race = race;
         this.name = name;
-        this.age = age;
-
+        if (age < 0 ) {
+            throw new IllegalArgumentException();
+        } else {
+            this.age = age;
+        }
     }
 
     public String getName() {

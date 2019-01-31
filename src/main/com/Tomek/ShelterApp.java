@@ -81,8 +81,9 @@ public class ShelterApp {
                     boolean box = sc.nextLine().trim().toLowerCase().equals("tak");
                     shelter.addAnimal(new Cat(name, race, years, outgoing, box));
                 }
-            } catch (NumberFormatException ne) {
-                System.out.println("Podaj wiek w formie pełnej liczby");
+            } catch (IllegalArgumentException ne) {
+                System.out.println("Dodawanie niepomyślne." +
+                        '\n' +"Podaj wiek w formie pełnej liczby nieujemnej.");
             }
         }
     }
