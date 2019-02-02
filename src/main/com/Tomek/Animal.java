@@ -20,7 +20,7 @@ public class Animal implements Comparable<Animal>, Serializable {
         this.race = race;
         this.name = name;
         if (age < 0 ) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Wiek nie może być wartością ujemną!");
         } else {
             this.age = age;
         }
