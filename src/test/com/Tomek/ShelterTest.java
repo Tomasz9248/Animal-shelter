@@ -1,5 +1,8 @@
-package com.Tomek;
+package com.tomek;
 
+import com.tomek.controller.Shelter;
+import com.tomek.model.Animal;
+import com.tomek.model.Cat;
 import org.junit.Before;
 import org.junit.Test;
 

@@ -1,7 +1,6 @@
-package com.Tomek;
+package com.tomek.model;
 
 import java.time.LocalDate;
-import java.util.Objects;
 
 public class Cat extends Animal {
 
@@ -34,13 +33,6 @@ public class Cat extends Animal {
         isUsingLittleTray = usingLittleTray;
     }
 
-
-
-    @Override
-    public int compareTo(Animal o) {
-        return super.compareTo(o);
-    }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder(super.toString());
@@ -49,8 +41,6 @@ public class Cat extends Animal {
         sb.append("Added: " + additionDate);
         return sb.toString();
     }
-
-
 
     @Override
     public int hashCode() {

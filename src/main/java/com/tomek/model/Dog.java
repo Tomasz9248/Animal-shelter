@@ -1,16 +1,14 @@
-package com.Tomek;
+package com.tomek.model;
 
 import java.time.LocalDate;
 
 public class Dog extends Animal {
-
 
     private boolean isFetching;
     private boolean isPurebred;
     private LocalDate additionDate;
 
     private static final long serialUID = 123456789111L;
-
 
     public Dog(String name, String race, int age, boolean isFetching, boolean isPurebred) {
         super(name, race, age);
@@ -34,12 +32,6 @@ public class Dog extends Animal {
     public void setPurebred(boolean purebred) {
         isPurebred = purebred;
     }
-
-    @Override
-    public int compareTo(Animal o) {
-        return super.compareTo(o);
-    }
-
 
     @Override
     public int hashCode() {

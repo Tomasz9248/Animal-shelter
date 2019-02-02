@@ -1,10 +1,10 @@
-package com.Tomek;
+package com.tomek.model;
 
 
 import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Animal implements Comparable<Animal>, Serializable {
+public class Animal implements Serializable {
 
     private String name;
     private String race;
@@ -20,7 +20,7 @@ public class Animal implements Comparable<Animal>, Serializable {
         this.race = race;
         this.name = name;
         if (age < 0 ) {
-            throw new IllegalArgumentException("Wiek nie może być wartością ujemną!");
+            throw new IllegalArgumentException("Age cannot be negative number.");
         } else {
             this.age = age;
         }
@@ -50,18 +50,11 @@ public class Animal implements Comparable<Animal>, Serializable {
         this.age = age;
     }
 
-
-    @Override
-    public int compareTo(Animal o) {
-        return 0;
-    }
-
     @Override
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-
         if (obj == null || this.getClass() != obj.getClass()) {
             return false;
         }
